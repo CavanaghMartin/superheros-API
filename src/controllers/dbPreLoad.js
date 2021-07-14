@@ -1,6 +1,7 @@
 const { superhero } = require('../db.js');
 const axios = require('axios');
-const APIKEY = "ts=1&apikey=5713563fe5fbd5e2c1b244b739e8eeb5&hash=8edee7db3a4c99f6c3c72d656e102a35"
+require('dotenv').config();
+const {APIKEY} = process.env;
 
 const populate = () => {
 
