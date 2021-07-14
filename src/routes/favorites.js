@@ -13,6 +13,7 @@ router.get('/', function (req, res) {
             model: favorite,
             required: true
         },
+      
 
     })
         .then(heros => {
