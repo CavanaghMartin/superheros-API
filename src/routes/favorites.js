@@ -3,7 +3,14 @@ const { Router } = require('express');
 
 
 const router = Router();
+//get all favorites
+//get  http://localhost:3001/favorites/
 
+//delete favorites
+//delete  http://localhost:3001/favorites/2
+
+//add favorites
+//post  http://localhost:3001/favorites/1223
 
 //find all favorites
 router.get('/', function (req, res) {
