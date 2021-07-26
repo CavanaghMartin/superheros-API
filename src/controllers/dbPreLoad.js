@@ -32,7 +32,7 @@ const populate = () => {
 
         superhero.findAll()
             .then(heros => {
-              console.log("loaded correctly in db")
+              console.log("Marvel heros loaded correctly in db")
             })
             .catch(err => { console.log("error:" + "superheros cant be loaded in  db") })
 
