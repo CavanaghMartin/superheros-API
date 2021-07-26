@@ -4,9 +4,6 @@ require('dotenv').config();
 const {APIKEY} = process.env;
 
 const populate = () => {
-
-        let newArray = []
-
         for (let i = 0; i < 14; i++) {
             
             axios(`https://gateway.marvel.com:443/v1/public/characters?limit=100&offset=${i*100}&${APIKEY}`)
@@ -14,7 +11,6 @@ const populate = () => {
             .then(result => {
                 result.data.data.results.forEach(hero => {
                     const { name, description, thumbnail: { path, extension } } = hero;
-                    newArray.push({ name, description, path, extension })
                     
                     superhero.findOrCreate({
                         where: {
@@ -28,7 +24,7 @@ const populate = () => {
                 });
             })
             .catch(error => {
-                console.log(error)
+                console.log("cant connect to db")
             })
             
             
@@ -36,9 +32,9 @@ const populate = () => {
 
         superhero.findAll()
             .then(heros => {
-              console.log("superheros loaded correctly in db")
+              console.log("loaded correctly in db")
             })
-            .catch(err => { console.log("error:" + err) })
+            .catch(err => { console.log("error:" + "superheros cant be loaded in  db") })
 
     
 

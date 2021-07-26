@@ -20,7 +20,7 @@ router.get('/:heroName', function (req, res) {
         superhero.findAll({
             where: {
                 name: {
-                    [Sequelize.Op.iLike]: '%' + heroName + '%'
+                    [Sequelize.Op.iLike]: heroName + '%'
                 }
             },
            limit: pageSize,

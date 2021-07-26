@@ -8,4 +8,4 @@
 //post  http://localhost:3001/favorites/1223
 
 //search superhero by name:
-get  http://localhost:3001/superheros/sa?page=1
+get  http://localhost:3001/superheros/spid?page=2
